@@ -2,65 +2,65 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Quiz app</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-  	<ul>
-  <li>
-    <h3>How many letters are there in "JS"?</h3>
-    <input type="radio" name="question0" id="1A">Gregg<br>
-    <input type="radio" name="question0" id="1B">Roxy<br>
-    <input type="radio" name="question0" id="1C">3<br>
-    <input type="radio" name="question0" id="1D">4<br>
-  </li>
-  <li>
-    <h3>How many letters are there in "BMX"?</h3>
-    <input type="radio" name="question1" id="2A">2<br>
-    <input type="radio" name="question1" id="2B">1<br>
-    <input type="radio" name="question1" id="2C">3<br>
-    <input type="radio" name="question1" id="2D">4<br>
-  </li>
-  <li>
-    <h3>How many letters are there in "A"?</h3>
-    <input type="radio" name="question2" id="3A">2<br>
-    <input type="radio" name="question2" id="3B">1<br>
-    <input type="radio" name="question2" id="3C">3<br>
-    <input type="radio" name="question2" id="3D">4<br>
-  </li>
-   <li>
-    <h3>How many letters are there in "A"?</h3>
-    <input type="radio" name="question3" id="4A">2<br>
-    <input type="radio" name="question3" id="4B">1<br>
-    <input type="radio" name="question3" id="4C">3<br>
-    <input type="radio" name="question3" id="4D">4<br>
-  </li>
-     <li>
-    <h3>How many letters are there in "A"?</h3>
-    <input type="radio" name="question4" id="5A">2<br>
-    <input type="radio" name="question4" id="5B">1<br>
-    <input type="radio" name="question4" id="5C">3<br>
-    <input type="radio" name="question4" id="5D">4<br>
-  </li>
-</ul>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Quiz app</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type= "text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<button onclick="returnScore()">View Results</button>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" id="content">
+        <h1> Are you a DT student?</h1>
+        <div id="quiz">
+          <ul>
+          <h3 id="firsth3">What floor do you call home?</h3>
+            <li class="to-be-changed"><input type="radio" name="question0" id="1A"> 5th floor Library</li>
+            <li><input type="radio" name="question0" id="1B"> D12</li>
+            <li><input type="radio" name="question0" id="1C"> UCL1</li>
+            <li><input type="radio" name="question0" id="1D"> Where I actually live...</li>
+          </ul>
+          <ul>
+            <h3>Beverage of choice?</h3>
+            <li><input type="radio" name="question1" id="2A"> Beer</li>
+            <li><input type="radio" name="question1" id="2B"> Coffee</li>
+            <li><input type="radio" name="question1" id="2C"> Tea</li>
+            <li><input type="radio" name="question1" id="2D"> Water</li>
+          </ul>
+          <ul>
+            <h3>Do you find yourself sleeping throught the day?</h3>
+            <li><input type="radio" name="question2" id="3A"> No</li>
+            <li><input type="radio" name="question2" id="3B"> Yes</li>
+          </ul>
+          <ul>
+            <h3>Did you attend Bootcamp?</h3>
+            <li><input type="radio" name="question3" id="4A"> Yes</li>
+            <li><input type="radio" name="question3" id="4B"> No</li>
+            <li><input type="radio" name="question3" id="4C"> I survived....</li>
+          </ul>
+          <ul>
+            <h3>Did you inspect element on this quiz?</h3>
+            <li><input type="radio" name="question4" id="5A"> Inspect what?</li>
+            <li><input type="radio" name="question4" id="5B"> Nope, just here to answer the questions</li>
+            <li><input type="radio" name="question4" id="5C"> Of course!!!</li>
+          </ul>
+        </div><!--quiz-->
+              <div id="results"></div>
 
-<div id="results"></div>
-
-    <script src="main.js"></script>
-  </body>
+              <div id="centerized">
+                      <button onclick="returnScore()">View Results</button>
+              </div>        
+      </div><!--col-->
+    </div><!--row-->
+  </div><!--container-->
+  <script src="main.js"></script>
+</body>
 </html>
-
-
-
-
-
-<!-- http://www.w3schools.com/tags/tag_label.asp -->

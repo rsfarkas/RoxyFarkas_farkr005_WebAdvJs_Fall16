@@ -10,15 +10,15 @@ var checkAnswer = function(){
     totalScore += 1;
   }
 
-   if (document.getElementById("3C").checked){
+   if (document.getElementById("3B").checked){
     totalScore += 1;
   }
 
-   if (document.getElementById("4A").checked){
+   if (document.getElementById("4C").checked){
     totalScore += 1;
   }
 
-  if (document.getElementById("5D").checked){
+  if (document.getElementById("5C").checked){
     totalScore += 1;
   }
 
@@ -27,7 +27,5 @@ var checkAnswer = function(){
 
 var returnScore = function () {
   var score = checkAnswer();
-  document.getElementById('results').innerHTML = score + "/ 5!";
+  document.getElementById('results').innerHTML = "Congratulations! You have answered " + score + "/ 5 correctly!";
 };
-
-
