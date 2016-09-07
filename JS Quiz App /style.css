@@ -6,20 +6,17 @@ body{
 #content{
     background:white;
 }
+
 li {
-	    list-style-type: none;
-	        line-height: 38px;
+    list-style-type: none;
+    line-height: 38px;
     font-size: 15px;
-        background-color: #F2F2F2;
-            margin-bottom: 7px;
+    background-color: #F2F2F2;
+    margin-bottom: 7px;
 }
 
 li:hover{
     background-color:rgba(255, 255, 0, 0.28);
-}
-
-.radio-toolbar input[type="radio"]:checked + label { 
-    background-color:#bbb;
 }
 
 .select{
@@ -28,14 +25,15 @@ li:hover{
 }
 
 ul{
-	padding-left:0px;
+    padding-left:0px;
 }
- input[type=radio]{
-	margin-left:7px !important;
+
+input[type=radio]{
+    margin-left:7px !important;
 }
 
 h3{
-	background-color: red;
+    background-color: red;
     color: white !important;
     padding: 60px 0px;
     text-align: center;
@@ -44,8 +42,9 @@ h3{
 #firsth3{
     margin-top:0px;
 }
+
 h1{
-	text-align:center;
+    text-align:center;
     font-size: 36px;
     color: white !important;
     background: black;
@@ -60,7 +59,7 @@ h1{
 
 
 button{
-	text-align: center;
+    text-align: center;
     color: white !important;
     background-color: red;
     padding: 10px 20px;
@@ -77,13 +76,12 @@ button:focus{
 }
 
 #results{
-	font-size: 23px;
+    font-size: 23px;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
     font-weight: bold;
 }
-
 
 
 
