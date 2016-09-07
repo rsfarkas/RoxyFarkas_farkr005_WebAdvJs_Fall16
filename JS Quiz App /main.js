@@ -28,5 +28,5 @@ var checkAnswer = function(){
 var returnScore = function () {
   var score = checkAnswer();
   document.getElementById('results').innerHTML = "Congratulations! You have answered " + score + "/ 5 correctly!";
-
+ totalScore = 0;
 };
