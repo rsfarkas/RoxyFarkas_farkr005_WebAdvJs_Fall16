@@ -171,8 +171,14 @@ body {
 .mb50{
   margin-bottom:50px;
 }
+.mb66{
+  margin-bottom: 66px;
+}
 .mb86{
   margin-bottom:86px;
+}
+.ml10{
+  margin-left:10px;
 }
 .tac{
   text-align:center;
@@ -628,10 +634,6 @@ div .items {
 
 /* tablet sizes */
 @media screen and (max-width: 780px) and (min-device-width: 500px){
-  #works{
-    margin-left:1.5vw;
-  }
-
   div .items {
     width: calc(89vw);
   }
@@ -651,10 +653,6 @@ div .items {
 }
 
 @media screen and (max-device-width: 500px) and (orientation: portrait){
-  #works{
-    margin-left:-0.5vw;
-  }
-
   div .items {
     width: calc(90vw / 3);
   }
@@ -679,4 +677,4 @@ div .items {
   }
 }
 
-/*
+/* gallery based off in class demo */
