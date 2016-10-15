@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>potlucktime</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/js/main.js"></script>
+</head>
+<body>
+  <header>
+    <section id="nav" class="module-image">
+      <div class="site-container">
+        <div class="site-pusher">
+          <header class="header">
+            <a href="#" class="header__icon" id="header__icon"></a>
+            <nav class="menu">
+              <ul>
+                <li class="inline"><a id="home" href="#home">Home</a></li>
+                <li class="inline"><a id="signup" href="#signup">Signup</a></li>
+                <li class="inline"><a id="menu" href="#menu">Menu</a></li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+      </div>
+    </section>
+  </header> 
+  <div id="hero" class="home"><h1>Gather</h1></div>
+  <div class="container-fluid mt37">
+    <div class="row">
+      <div class="signup">
+        <div class="col-md-10 col-md-offset-1">
+          <ul class="guests">
+            <% for(var i=0; i<guests.length; i++) {%>
+            <div class="col-md-3 col-sm-3">
+              <li class="guest" id=<%= guests[i]._id %>>
+                <h2><%= guests[i].name %></h2>
+                <p class="bringing"><%= guests[i].dish %></p>
+                <p class="typeOfDish"><%= guests[i].type%></p>
+                <button>delete</button>
+              </li>
+            </div><!--col-md-3 col-sm-3-->
+            <% } %>
+          </ul><!--guests-->
+        </div><!--col-md-10 col-md-offset-1"-->
+      </div><!--signup-->
+    </div><!--row-->
+    <div class="row">
+      <div class="signup">
+        <div id="signupForm" class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+          <h2>Register for Your Gathering</h2>
+          <form action="/guests" method="POST" class="form-inline">
+            <div class="form-group mr10">
+              <label>Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Elizabeth Taylor">
+            </div>
+            <div class="form-group mr10">
+              <label>Dish</label>
+              <input type="text" class="form-control" name="dish" placeholder="avocado toast">
+            </div>
+            <br>
+            <label class="form-check-inline">
+                  <input type="radio" name="type" value="appetizer" checked> Appetizer
+            </label>
+            <label class="form-check-inline">
+              <input type="radio" name="type" value="main"> Main Course
+            </label>
+            <label class="form-check-inline">
+             <input type="radio" name="type" value="dessert"> Dessert
+            </label>
+            <br>
+            <button type="submit">Submit</button>
+          </form>
+        </div><!--col-md-10 col-md-offset-1"-->
+      </div><!--signup-->
+    </div><!--row-->
+  </div><!--container fluid-->
+
+  <div class="container-fluid">
+    <div class="row">
+    <div class="menuPage">
+      <div id="menuList" class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+        <h1>Menu</h1>
+        <hr>
+        <h3>Appetizer</h3>
+        <ul class="appetizers pl0">
+          <% for(var i=0; i<guests.length; i++) {%>
+          <%if (guests[i].type == 'appetizer') { %>
+          <li class="menuDish" id=<%= guests[i]._id %> ><%= guests[i].dish%>
+            <% } %>
+          </li>
+          <% } %>
+        </ul>
+        <h3>Mains</h3>
+        <ul class="main pl0">
+          <% for(var i=0; i<guests.length; i++) {%>
+          <%if (guests[i].type == 'main') { %>
+          <li class="menuDish" id=<%= guests[i]._id %> ><%= guests[i].dish%></p>
+            <% } %>
+          </li>
+          <% } %>
+        </ul>
+        <h3>Dessert</h3>
+        <ul class="dessert pl0">
+          <% for(var i=0; i<guests.length; i++) {%>
+          <%if (guests[i].type == 'dessert') { %>
+          <li class="menuDish" id=<%= guests[i]._id %> ><%= guests[i].dish%></p>
+            <% } %>
+          </li>
+          <% } %>
+        </ul>
+      </div><!--col-md-8 col-md-offset-1-->
+    </div><!--menuPage-->
+    </div><!--row-->
+  </div><!--container-->
+
+  <footer>
+    <div class="container-fluid pt15 ">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tac col-md-4">
+            <p>hello@gather.com</p>
+          </div>
+          <div class="tac col-md-4">
+            <p> &copy; Gather Inc</p>
+          </div>
+          <div class="tac col-md-4">
+            <ul id="social">
+              <li class="inline"><a href="https://twitter.com/"><i class="fa fa-twitter-square"></i></a></li>
+              <li class="inline"><a href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a></li>
+              <li class="inline"><a href="https://www.snapchat.com/"><i class="fa fa-snapchat-square"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

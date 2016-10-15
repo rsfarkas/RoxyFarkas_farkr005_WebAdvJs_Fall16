@@ -1,0 +1,239 @@
+html, body{
+  min-height:100vh;
+}
+
+hr {
+  width: 48% !important;
+  border-top: 1px solid black !important;
+}
+
+body {
+  background-image:url('../imgs/rockPicnic.jpeg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  height:100%;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+
+.header {
+  position: static;
+  left: 0;
+  top:0;
+  right: 0;
+  height: 66px;
+  background-color: rgba(255, 255, 255, 0.41);
+  z-index:2;
+}
+
+.header__logo {
+  font-weight: 700;
+  padding: 0 25px;
+  float: left;
+}
+
+#hero{
+  text-align:center;
+  height:80vh;
+}
+
+.home h1{
+  position: absolute;
+  top: 25vh;
+  color: whitesmoke;
+  font-size: 20vw;
+  left:22.6%;
+  text-shadow:3px 3px rgba(51, 51, 51, 0.47);
+}
+
+.signup{
+  text-align:center;
+}
+
+#signupForm{
+  border:solid 2px black;
+  background-color:rgba(245, 245, 245, 0.92);
+  margin-top:50px;
+  margin-bottom:80px;
+}
+
+.guest{
+  list-style:none;
+  border:solid 2px black;
+  background-color:rgba(245, 245, 245, 0.92);
+  margin-top:10px;
+}
+
+.guests{
+  padding-left:0px;
+}
+
+.menuPage{
+  display:none;
+}
+
+.signup{
+  display:none;
+}
+
+#menuList{
+  text-align:center;
+  border:solid 2px black;
+  background-color:rgba(245, 245, 245, 0.92);
+   margin-top:50px;
+  margin-bottom:80px;
+}
+
+ul.appetizers, ul.main, ul.dessert{
+  list-style:none;
+}
+
+.form-check-inline{
+  margin:16px;
+}
+
+button{
+  margin-bottom: 10px !important;
+  width: 79px;
+  border-radius: 2px;
+  background-color: white;
+  border: none;
+}  
+
+footer{
+  margin-top:40px;
+  background-color:whitesmoke;
+  font-size:16px;
+  position: static;
+  left: 0;
+  bottom:0;
+  right: 0;
+  z-index:2;
+}
+
+ul#social{
+  list-style:none;
+  padding-left:0px;
+}
+
+.tac{
+  text-align:center;
+}
+
+.pl0{
+  padding-left:0px;
+}
+
+.pt15{
+  padding-top:15px;
+}
+
+.pb7{
+  padding-bottom:7px;
+}
+
+.mt37{
+  margin-top:37px;
+}
+
+.mr10{
+  margin:10px;
+}
+
+a{
+  color: black !important;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+a:focus{
+  outline:none !important;
+}
+.inline{
+  display:inline;
+}
+
+@media only screen and (max-width:807px){
+  .signup{
+    margin-top:83px;
+   } 
+  .menuPage{
+    margin-top:40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .site-pusher,
+  .site-container {
+    height: 100%;
+  }
+
+  .site-container {
+    overflow: hidden;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+  }
+
+  .site-pusher {
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
+  .header {
+    position: static;
+  }
+
+  .header__icon {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 66px;
+    cursor: pointer;
+  }
+
+  .header__icon:after {
+    content: '';
+    position: absolute;
+    color:black;
+    display: block;
+    width: 1rem;
+    height: 0;
+    top: 16px;
+    left: 15px;
+    box-shadow: 0 10px 0 1px black, 0 16px 0 1px black, 0 22px 0 1px black;
+  }
+
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.41);
+    width: 250px;
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+  }
+
+  .menu a {
+    display: block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  .with--sidebar .site-pusher {
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px);
+  }
+
+  .with--sidebar .site-cache {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
