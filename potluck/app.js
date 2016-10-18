@@ -55,11 +55,6 @@ MongoClient.connect(uri, function(err, database){
       console.log('saved to database');
       res.redirect('/')
     });
-    // $("#signup").click(function(){
-    //   $(".signup").css("display","block");
-    //   $(".menuPage").css("display","none");
-    //   $("#hero").css("display","none");
-    // });
   });
 
 
