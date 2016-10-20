@@ -29,7 +29,10 @@
       </div>
     </section>
   </header> 
-  <div id="hero" class="home"><h1>Gather</h1></div>
+  <div id="hero" class="home">
+    <h1>Gather</h1>
+    <button id="join" id="signup" href="#signup"><a id="signup" href="#signup">Join the Gathering</a></button>
+  </div>
   <div class="container-fluid mt37">
     <div class="row">
       <div class="signup">
@@ -60,7 +63,7 @@
             </div>
             <div class="form-group mr10">
               <label>Dish</label>
-              <input type="text" class="form-control" name="dish" placeholder="avocado toast">
+              <input type="text" class="form-control" name="dish" placeholder="Avocado Toast">
             </div>
             <br>
             <label class="form-check-inline">
@@ -73,7 +76,7 @@
              <input type="radio" name="type" value="Dessert"> Dessert
             </label>
             <br>
-            <button type="submit">Submit</button>
+            <button id="submit" type="submit">Submit</button>
           </form>
         </div><!--col-md-10 col-md-offset-1"-->
       </div><!--signup-->
@@ -86,7 +89,7 @@
       <div id="menuList" class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
         <h1>Menu</h1>
         <hr>
-        <h3>Appetizers</h3>
+        <h2>Appetizers</h2>
         <ul class="appetizers pl0">
           <% for(var i=0; i<guests.length; i++) {%>
           <%if (guests[i].type == 'Appetizer') { %>
@@ -95,7 +98,7 @@
           </li>
           <% } %>
         </ul>
-        <h3>Mains</h3>
+        <h2>Mains</h2>
         <ul class="main pl0">
           <% for(var i=0; i<guests.length; i++) {%>
           <%if (guests[i].type == 'Main') { %>
@@ -104,7 +107,7 @@
           </li>
           <% } %>
         </ul>
-        <h3>Desserts</h3>
+        <h2>Desserts</h2>
         <ul class="dessert pl0">
           <% for(var i=0; i<guests.length; i++) {%>
           <%if (guests[i].type == 'Dessert') { %>

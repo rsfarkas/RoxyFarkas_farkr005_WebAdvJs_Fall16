@@ -12,9 +12,16 @@ body {
   background-repeat:no-repeat;
   background-size: cover;
   height:100%;
+  font-size:1.7vw !important;
   font-family: 'Cormorant Garamond', serif !important;
 }
 
+li{
+  font-size:16px
+}
+nav{
+  margin-top:-.5vh;
+}
 .header {
   position: static;
   left: 0;
@@ -37,12 +44,19 @@ body {
 }
 
 .home h1{
-  position: absolute;
-  top: 25vh;
+  position: relative;
   color: whitesmoke;
   font-size: 20vw;
-  left:22.6%;
   text-shadow:3px 3px rgba(51, 51, 51, 0.47);
+}
+
+ #join{
+  position:relative;
+  width: auto; 
+  font-size: 2vw;
+  border: 2px solid black;
+  color: black;
+  background-color:rgba(245, 245, 245, 0.92);
 }
 
 .signup{
@@ -138,8 +152,21 @@ ul#social{
 .mr10{
   margin:10px;
 }
+
 .mh80{
 	min-height:80vh;
+}
+
+label{
+  font-size:14px;
+}
+
+#submit{
+  font-size:16px
+}
+
+button a{
+  font-size:2.5vw;
 }
 
 a{
@@ -162,8 +189,17 @@ a:focus{
   .menuPage{
     margin-top:76px;
   }
+  .home h1{
+    top:20vh;
+  }
+  #join{
+    top:25vh;
+  }
 }
 @media only screen and (max-width: 768px) {
+  button a{
+  font-size:3.5vw;
+  }
   .site-pusher,
   .site-container {
     height: 100%;
@@ -242,6 +278,7 @@ a:focus{
 }
 
 @media only screen and (max-width: 600px){
+ 
 	#signupForm{
 		margin-top:0px;
 	}

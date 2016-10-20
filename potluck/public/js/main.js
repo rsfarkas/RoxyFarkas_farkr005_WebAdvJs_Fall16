@@ -53,6 +53,12 @@ app.main = (function() {
       $(".menuPage").css("display","none");
       $("#hero").css("display","none");
     });
+    $("#join #signup").click(function(){
+      $(".signup").css("display","block");
+      $(".signup").css('min-height', '40vh');
+      $(".menuPage").css("display","none");
+      $("#hero").css("display","none");
+    });
 });
 
 
