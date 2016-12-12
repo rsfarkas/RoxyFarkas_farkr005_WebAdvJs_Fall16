@@ -115,6 +115,10 @@ h1{
   padding-bottom:100px !important;
 }
 
+#vote-container{
+  margin-bottom:140px;
+}
+
 #list-container{
   width: calc(100% - 40px);
   max-width: 700px;
@@ -129,6 +133,7 @@ h1{
   margin-right:auto;
   text-align:center;
 }
+
 #vote-input {
   width: calc(100% - 40px);
   max-width: 700px;
@@ -255,9 +260,11 @@ text.category{
 /* Loader */
 /* Credit to: https://codepen.io/ispal/pen/mVaaJe*/
 .loader {
-  position: relative;
-  width: 75px;
-  height: 100px;
+     position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 293px;
+    height: 150px;
 }
 .loader__bar {
   position: absolute;
@@ -270,35 +277,35 @@ text.category{
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 .loader__bar:nth-child(1) {
-  left: 0px;
+  left: 110px;
   -webkit-transform: scale(1, 0.2);
           transform: scale(1, 0.2);
   -webkit-animation: barUp1 4s infinite;
           animation: barUp1 4s infinite;
 }
 .loader__bar:nth-child(2) {
-  left: 15px;
+  left: 125px;
   -webkit-transform: scale(1, 0.4);
           transform: scale(1, 0.4);
   -webkit-animation: barUp2 4s infinite;
           animation: barUp2 4s infinite;
 }
 .loader__bar:nth-child(3) {
-  left: 30px;
+  left: 140px;
   -webkit-transform: scale(1, 0.6);
           transform: scale(1, 0.6);
   -webkit-animation: barUp3 4s infinite;
           animation: barUp3 4s infinite;
 }
 .loader__bar:nth-child(4) {
-  left: 45px;
+  left: 155px;
   -webkit-transform: scale(1, 0.8);
           transform: scale(1, 0.8);
   -webkit-animation: barUp4 4s infinite;
           animation: barUp4 4s infinite;
 }
 .loader__bar:nth-child(5) {
-  left: 60px;
+  left: 170px;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
   -webkit-animation: barUp5 4s infinite;
@@ -306,8 +313,8 @@ text.category{
 }
 .loader__ball {
   position: absolute;
-  bottom: 10px;
-  left: 0;
+  bottom: 30px;
+  left: 110px;
   width: 10px;
   height: 10px;
   background: #4ABDAC;
