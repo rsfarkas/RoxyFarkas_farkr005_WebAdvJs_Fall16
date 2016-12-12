@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VWF</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="js/underscore-min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+ <header>.</header>
+  <div id="main-container" class="container-fluid"></div>
+  <!-- Templates -->
+  <!-- Index -->
+  <script id="tpl-index" type="text/html">
+   <div id="hero" class="col-md-12">
+   <div class="row">
+   <div class="col-md-8">
+  <div id="heroText">
+  <h1 id="mainTitle">Vote with Friends</h1>
+  <h3>For when you just can't decide.</h3>
+  </div><!--heroText-->
+  </div><!--col-md-8-->
+  <div class="col-md-3">
+  <div class="row">
+  <img id="graph" src="img/graph.png" alt="Graph">
+  </div><!--row-->
+  </div><!--col-md-3-->
+  </div><!--row-->
+  </div><!--col-md-12-->
+  <hr id="graphHR">
+    <h1>Current Polls</h1>
+    <!-- List of polls -->
+    <div id="list-container">
+      <% for(var pollId in data){ %>
+      <div class="poll-item">
+        <a class="body-main" href="#/poll/<%= pollId %>"><%= data[pollId].name %></a><br/>
+      </div>
+      <% } %>
+    </div>
+
+    <!-- Input -->
+    <hr>
+     <h1>Create a Poll</h1>
+        <div id="vote-input">
+          <div class="form-group">
+            <label for="question">Poll Question:</label>
+              <input type="text" class="form-control" id="js-ipt-poll-name" placeholder="Enter new question" input type="text" name="question"></input>
+          </div>
+          <div class="form-group">
+            <label for="choice1">Option 1:</label>
+             <input type="text" class="form-control" id="js-ipt-poll-choiceOne" placeholder="Enter 1st option" name="choiceOne"></input>
+          </div>
+          <div class="form-group">
+            <label for="choice1">Option 2:</label>
+             <input type="text" class="form-control" id="js-ipt-poll-choiceTwo" placeholder="Enter 2nd option" name="choiceTwo"></input>
+          </div>
+          <div class="form-group">
+            <label for="choice1">Option 3:</label>
+             <input type="text" class="form-control" id="js-ipt-poll-choiceThree" placeholder="Enter 3rd option" name="choiceThree"></input>
+          </div>
+          <button class="btn btn-default" id="js-btn-create-poll" value="CREATE">Create</button>
+      </div>
+  </script>
+
+  <!-- poll -->
+  <script id="tpl-poll" type="text/html">
+  <a href="#/index">< Back to list of Polls</a>
+  <h2>Question: <%= data.poll.name %></h2>
+  <div id="ballot">
+      <div class="form-group">
+          <h3>Vote Anonymously</h3>
+          <hr>
+          <div class="radio">
+            <label>
+              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="1" checked>
+                <%= data.poll.choiceOne %>
+            </label>
+          </div>
+           <div class="radio">
+            <label>
+              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="2">
+                <%= data.poll.choiceTwo %>
+            </label>
+          </div>
+           <div class="radio">
+            <label>
+              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="3">
+                <%= data.poll.choiceThree %>
+            </label>
+          </div>
+      </div>
+      <button type="submit" id="js-btn-vote-radio" class="btn btn-primary">Submit</button>
+  </div>
+  <div class="list-container">
+
+  <!-- Vote Container -->
+    <div id="vote-container"></div>
+  </script>
+
+  <!-- Vote Item -->
+  <script id="tpl-vote-item" type="text/html">
+  <div class="vote-item">
+    <div id="chart"></div>
+    <div class="body-aux"> </div>
+    <div class="body-main"></div>
+  </div>
+  </script>
+
+  <!-- Loader -->
+  <script id="tpl-loader" type="text/html">
+    <div class="loader">
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__ball"></div>
+    </div>
+  </script>
+
+  <footer>
+    <div class="container-fluid pt15 ">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="tac col-sm-4">
+            <p>hello@votewithfriends.com</p>
+          </div>
+          <div class="tac col-sm-4">
+            <p> &copy; Friendly Vote Inc</p>
+          </div>
+          <div class="tac col-sm-4">
+            <ul id="social">
+              <li><a href="https://twitter.com/"><i class="fa fa-twitter-square"></i></a></li>
+              <li><a href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
